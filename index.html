@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Task Management App</title>
 </head>
-<body style="background-color: #ebf3ff;">
+<body onload="loadExistingCards()" style="background-color: #ebf3ff">
 
 
     <!-- Modal -->
@@ -41,42 +41,7 @@
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="openTask" tabindex="-1" aria-labelledby="openTaskLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="openTaskLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="imageURL" class="form-label">Image URL</label>
-                    <input type="url" class="form-control" id="imageURL">
-                </div>
-                <div class="mb-3">
-                    <label for="taskTitle" class="form-label">Task Title</label>
-                    <input type="text" class="form-control" id="taskTitle">
-                </div>
-                <div class="mb-3">
-                    <label for="taskType" class="form-label">Task Type</label>
-                    <input type="text" class="form-control" id="taskType">
-                </div>
-                <div class="mb-3">
-                    <label for="taskDescription " class="form-label">Task Description</label>
-                    <textarea id="taskDescription" rows=6 ></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary" onclick="addNewCard()" data-bs-dismiss="modal">Save changes</button>
             </div>
         </div>
         </div>
@@ -118,29 +83,7 @@
 
         <!-- Task Container -->
         <section class="task__container row">
-            <div class="col-md-6 col-lg-4 my-4">
-                <div class="card">
-                    <div class="card-header gap-2 d-flex justify-content-end">
-                      <button class="btn btn-outline-info">
-                          <i class="fal fa-pencil"></i>
-                      </button>
-                      <button class="btn btn-outline-danger">
-                        <i class="far fa-trash-alt"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                        <img src="https://iso.500px.com/wp-content/uploads/2019/10/ON-THE-LI-RIVER-BY-TOBIAS-HAGG-1500x1000.jpeg" alt="image" class="card-img">
-                      <h5 class="card-title mt-4">Task Title</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <span class="badge bg-primary">New</span>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#openTask">
-                            Open Task
-                          </button> 
-                    </div>
-                  </div>
-            </div>
+            
 
         </section>
     </main>
@@ -148,6 +91,6 @@
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    
+    <script src="index.js"></script>
 </body>
 </html>
