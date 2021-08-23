@@ -133,6 +133,8 @@ const editCard = (event) => {
     taskType.setAttribute("contenteditable","true");
     taskDescription.setAttribute("contenteditable","true");
     submitButton.setAttribute("onclick", "saveEdit.apply(this, arguments)");
+    submitButton.removeAttribute("data-bs-toggle");
+    submitButton.removeAttribute("data-bs-target");
     submitButton.innerHTML="Save Changes";
 };
 
@@ -171,6 +173,9 @@ const saveEdit = (event) => {
     taskTitle.setAttribute("contenteditable","false");
     taskType.setAttribute("contenteditable","false");
     taskDescription.setAttribute("contenteditable","false");
+    submitButton.setAttribute("onclick", "openTask.apply(this, arguments)");
+    submitButton.setAttribute("data-bs-toggle", "modal");
+    submitButton.setAttribute("data-bs-target", "#showTask");
     submitButton.innerHTML="Open task";
     
 };
